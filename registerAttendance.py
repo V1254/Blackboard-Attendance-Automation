@@ -63,9 +63,9 @@ def startProcess(browser):
         )
         beginTestButton.click()
 
-        yesRadioButton = WebDriverWait(browser, 60).until(
+        yesRadioButton = WebDriverWait(browser, 120).until(
             EC.presence_of_element_located(
-                (By.XPATH, "//*[@id='eo-ans-_18846262_1_1']")
+                (By.CSS_SELECTOR, "input[type='radio'][value='yes_no.true']")
             )
         )
         yesRadioButton.click()

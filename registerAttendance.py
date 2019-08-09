@@ -15,6 +15,7 @@ def setupDriver():
 
 def openBlackBoard(browser):
     browser.get("https://blackboard.le.ac.uk/")
+    browser.maximize_window()
 
 
 def login(browser, username, password):
@@ -71,12 +72,7 @@ def startProcess(browser):
         yesRadioButton.click()
 
         submitButton = WebDriverWait(browser, 60).until(
-            EC.presence_of_element_located(
-                (
-                    By.XPATH,
-                    "/html/body/div[5]/div[2]/div/div/div/div/div[2]/form/div[3]/div[4]/div/p/input[2]",
-                )
-            )
+            EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='submit']"))
         )
         submitButton.click()
 

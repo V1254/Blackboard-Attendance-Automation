@@ -34,21 +34,31 @@ def login(browser, username, password):
 
 def startProcess(browser):
     try:
-        testAnnouncment = WebDriverWait(browser, 60).until(
+        testModule = WebDriverWait(browser, 60).until(
             EC.presence_of_element_located(
                 (
                     By.XPATH,
-                    "/html/body/div[5]/div/div/div[2]/div/div/div/div/div[2]/div[1]/div[2]/div/div[2]/ul/li/a",
+                    "/html/body/div[5]/div/div/div[2]/div/div/div/div/div[1]/div[1]/div[2]/div/div[2]/ul/li[13]/a",
                 )
             )
         )
-        testAnnouncment.click()
+        testModule.click()
+
+        testLink = WebDriverWait(browser, 60).until(
+            EC.presence_of_element_located(
+                (
+                    By.XPATH,
+                    "/html/body/div[5]/div[2]/nav/div/div[2]/div/div[2]/ul/li[3]/a",
+                )
+            )
+        )
+        testLink.click()
 
         test = WebDriverWait(browser, 60).until(
             EC.presence_of_element_located(
                 (
                     By.XPATH,
-                    "/html/body/div[5]/div[2]/div/div/div[3]/form/ul/li[1]/div[1]/p[4]/a",
+                    "/html/body/div[5]/div[2]/div/div/div/div/div[2]/ul/li[2]/div[1]/h3/a",
                 )
             )
         )
